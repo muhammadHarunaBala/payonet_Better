@@ -126,13 +126,15 @@ class _AddMoneyState extends State<AddMoney> {
                           children: [
                             const Text('Account Number',style: TextStyle(
                               fontFamily: 'Poppins_Medium',
+                              fontSize: 18
+
                             ),),
                            Column(
                              children: [
                                Container(
                                 // margin: const EdgeInsets.only(left: 20),
                                  child: const Text("0319028965      ",style: TextStyle(
-                                   fontFamily: 'Poppins_Medium',
+                                   fontFamily: 'Poppins_Bold',
                                  ),),
                                )
                              ],
@@ -194,18 +196,37 @@ class _AddMoneyState extends State<AddMoney> {
                 ],
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                       margin: const EdgeInsets.only(left: 20, top:20,bottom: 10 ),
                       child: _buildButtonColumnsend(notifier.getprimeryColor, notifier.getblack,Icons.account_balance)),
-                  Column(
+                  const Column(
                     children: [
-                      Text('Top-up with Card / Account'),
-                      Text('Add  money  directly from your bank...'),
+                      SizedBox(height: 30,),
+                      SizedBox(width: 30,),
+                      Text('Top-up with Card / Account',style: TextStyle(
+                        fontFamily: 'Poppins_Bold',
+                        fontSize: 15
+                      ),),
+                      SizedBox(height: 10,),
+                      Text('Add  money  directly from your bank...',style: TextStyle(
+                        fontFamily: "Poppins_Medium",
+                        fontSize: 12,
+                      ),),
+
+
+
+
 
 
                     ],
-                  )
+                  ),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: height / 40,
+                    color: notifier.getblack,
+                  ),
                 ],
               ),
             )

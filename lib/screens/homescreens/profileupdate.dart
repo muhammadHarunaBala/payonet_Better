@@ -32,8 +32,8 @@ class _ProfileUpdate extends State<ProfileUpdate> {
           "Profile Settings",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontSize: height / 50,
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -51,6 +51,9 @@ class _ProfileUpdate extends State<ProfileUpdate> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              margin:  const EdgeInsets.all( 20),
+                child: const Divider()),
             Column(
               children: [
 
@@ -60,7 +63,7 @@ class _ProfileUpdate extends State<ProfileUpdate> {
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       name,
-                      EnString.network,
+                      "Name",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -76,7 +79,7 @@ class _ProfileUpdate extends State<ProfileUpdate> {
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       phonenumber,
-                      EnString.number,
+                      "Phone Number",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -92,7 +95,7 @@ class _ProfileUpdate extends State<ProfileUpdate> {
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       email,
-                      EnString.amount,
+                      "Email",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -108,7 +111,7 @@ class _ProfileUpdate extends State<ProfileUpdate> {
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       gender,
-                      EnString.amount,
+                      "Gender",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,

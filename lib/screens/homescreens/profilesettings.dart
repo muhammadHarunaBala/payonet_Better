@@ -31,11 +31,11 @@ class _ProfileSetting extends State<ProfileSetting> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "About Us",
+          "Settings",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Poppins_Medium',
+            fontSize: height / 50,
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -68,7 +68,7 @@ class _ProfileSetting extends State<ProfileSetting> {
                 const SizedBox(height: 5),
                 Column(
                   children: [
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -84,7 +84,7 @@ class _ProfileSetting extends State<ProfileSetting> {
 
 
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -97,7 +97,7 @@ class _ProfileSetting extends State<ProfileSetting> {
                       child: settingtype(Icons.document_scanner, EnString.downlodstm),
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -111,7 +111,7 @@ class _ProfileSetting extends State<ProfileSetting> {
                     ),
 
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -124,7 +124,7 @@ class _ProfileSetting extends State<ProfileSetting> {
                       child: settingtype(Icons.help_outline_rounded, EnString.help),
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -241,7 +241,7 @@ class _ProfileSetting extends State<ProfileSetting> {
             style: TextStyle(
               color: notifier.getblack,
               fontSize: height / 50,
-              fontFamily: 'Kufam_Medium',
+              fontFamily: 'Poppins_Medium',
             ),
           ),
           const Spacer(),

@@ -8,14 +8,14 @@ import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
 import '../customescreens/custtombutton.dart';
 
-class ElectricityCheckout extends StatefulWidget {
-  const ElectricityCheckout({super.key});
+class Checkout extends StatefulWidget {
+  const Checkout({super.key});
 
   @override
-  State<ElectricityCheckout> createState() => _ElectricityCheckoutState();
+  State<Checkout> createState() => _CheckoutState();
 }
 
-class _ElectricityCheckoutState extends State<ElectricityCheckout> {
+class _CheckoutState extends State<Checkout> {
   late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _ElectricityCheckoutState extends State<ElectricityCheckout> {
           style: TextStyle(
             color: notifier.getblack,
             fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:payonet/screens/paymentsscreens/reciept.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/colornotifir.dart';
@@ -8,6 +9,7 @@ import '../../utils/mediaqury.dart';
 import '../authscreens/otp.dart';
 import '../customescreens/customtextfild.dart';
 import '../customescreens/custtombutton.dart';
+import 'checkout.dart';
 
 class Internet extends StatefulWidget {
   const Internet({super.key});
@@ -31,8 +33,8 @@ class _InternetState extends State<Internet> {
           "Internet",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontSize: height / 50,
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -50,10 +52,17 @@ class _InternetState extends State<Internet> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+
             Column(
               children: [
 
-                const SizedBox(height: 50,),
+
+                // const SizedBox(height: 50,),
+                Container(
+                    margin: const EdgeInsets.all(20),
+
+                    child: const Divider()),
+                 const SizedBox(height: 10,),
 
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),
@@ -123,7 +132,7 @@ class _InternetState extends State<Internet> {
                   margin: const EdgeInsets.all(10),
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Otp()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Checkout()));
                     },
                     child: Custombutton.button(notifier.getprimeryColor, EnString.proceed, width/1.1),
                   ),

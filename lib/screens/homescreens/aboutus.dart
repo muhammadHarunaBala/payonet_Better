@@ -21,11 +21,11 @@ class _AboutUsState extends State<AboutUs> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Account Statement",
+          "About Us",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontSize: height / 50,
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -98,7 +98,7 @@ class _AboutUsState extends State<AboutUs> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 25,right: 25),
+                  margin: const EdgeInsets.only(left: 25,right: 25),
                   child: const Text("Terms and condition",style: TextStyle(
                       fontWeight: FontWeight.bold
                   ),),
@@ -107,7 +107,7 @@ class _AboutUsState extends State<AboutUs> {
             ),
             const SizedBox(height: 20,),
             Container(
-              margin: EdgeInsets.only(left: 25,right: 25),
+              margin: const EdgeInsets.only(left: 25,right: 25),
               child: const Text('I hired this lawyer to help me with a personal injury case and I was very impressed with their expertise ...',
               style: TextStyle(),),
             ),

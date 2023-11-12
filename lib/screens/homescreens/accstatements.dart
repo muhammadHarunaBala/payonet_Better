@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -31,8 +30,8 @@ class _AccountStatement extends State<AccountStatement> {
           "Account Statement",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontSize: height / 50,
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -52,17 +51,18 @@ class _AccountStatement extends State<AccountStatement> {
           children: [
             Container(
                 margin: const EdgeInsets.only(left: 20,right: 20,),
-            child: Divider()),
+            child: const Divider()),
             Column(
               children: [
 
                 const SizedBox(height: 40,),
 
+
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       network,
-                      EnString.network,
+                      "Start Date",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -74,11 +74,13 @@ class _AccountStatement extends State<AccountStatement> {
                 ),
                 const SizedBox(height: 20,),
 
+
+
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       mobilenumbet,
-                      EnString.number,
+                      "End Date",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -93,7 +95,7 @@ class _AccountStatement extends State<AccountStatement> {
 
 
 
-                const SizedBox(height: 20,),
+                 SizedBox(height:height/ 3,),
                 Container(
                   margin: const EdgeInsets.all(10),
                   child: GestureDetector(

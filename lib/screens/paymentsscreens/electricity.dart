@@ -8,7 +8,7 @@ import '../../utils/mediaqury.dart';
 import '../authscreens/otp.dart';
 import '../customescreens/customtextfild.dart';
 import '../customescreens/custtombutton.dart';
-import 'electricitycheckout.dart';
+import 'checkout.dart';
 
 class Electricity extends StatefulWidget {
   const Electricity({super.key});
@@ -19,7 +19,7 @@ class Electricity extends StatefulWidget {
 
 class _ElectricityState extends State<Electricity> {
   late ColorNotifier notifier;
-  TextEditingController servicep = TextEditingController();
+  TextEditingController service = TextEditingController();
   TextEditingController package = TextEditingController();
   TextEditingController meternumber = TextEditingController();
   TextEditingController amount = TextEditingController();
@@ -34,7 +34,7 @@ class _ElectricityState extends State<Electricity> {
           style: TextStyle(
             color: notifier.getblack,
             fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -55,13 +55,18 @@ class _ElectricityState extends State<Electricity> {
             Column(
               children: [
 
-                const SizedBox(height: 40,),
+                //const SizedBox(height: 40,),
+                Container(
+                    margin: const EdgeInsets.all(20),
+
+                    child: const Divider()),
+                const SizedBox(height: 10,),
 
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
-                      servicep,
-                      EnString.network,
+                      service,
+                      "Service Provider",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -77,7 +82,7 @@ class _ElectricityState extends State<Electricity> {
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       package,
-                      EnString.number,
+                      "Package",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -93,7 +98,7 @@ class _ElectricityState extends State<Electricity> {
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       meternumber,
-                      EnString.amount,
+                      "Meter Number",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -109,7 +114,7 @@ class _ElectricityState extends State<Electricity> {
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
                       amount,
-                      EnString.amount,
+                      "Amount",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -141,7 +146,7 @@ class _ElectricityState extends State<Electricity> {
                   margin: const EdgeInsets.all(10),
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const ElectricityCheckout()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Checkout()));
                     },
                     child: Custombutton.button(notifier.getprimeryColor, EnString.proceed, width/1.1),
                   ),

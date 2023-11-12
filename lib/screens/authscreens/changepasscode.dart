@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,8 +17,9 @@ class ChangePasscde extends StatefulWidget {
 
 class _ChangePasscde extends State<ChangePasscde> {
   late ColorNotifier notifier;
-  TextEditingController network = TextEditingController();
-  TextEditingController mobilenumbet = TextEditingController();
+  TextEditingController oldpass = TextEditingController();
+  TextEditingController newpass = TextEditingController();
+  TextEditingController confpass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,8 @@ class _ChangePasscde extends State<ChangePasscde> {
           "Change Pass-Code",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontSize: height / 50,
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -52,7 +52,7 @@ class _ChangePasscde extends State<ChangePasscde> {
           children: [
             Container(
                 margin: const EdgeInsets.only(left: 20,right: 20,),
-                child: Divider()),
+                child: const Divider()),
             Column(
               children: [
 
@@ -61,8 +61,8 @@ class _ChangePasscde extends State<ChangePasscde> {
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
-                      network,
-                      EnString.network,
+                      oldpass,
+                      "Old Passcode",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -77,8 +77,8 @@ class _ChangePasscde extends State<ChangePasscde> {
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
-                      mobilenumbet,
-                      EnString.number,
+                      newpass,
+                      "New Passcode",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,
@@ -93,8 +93,8 @@ class _ChangePasscde extends State<ChangePasscde> {
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),
                     child: Customtextbox.textField(
-                      mobilenumbet,
-                      EnString.number,
+                      confpass,
+                      "Confirm Passcode",
                       notifier.getvisacolor,
                       notifier.getvisacolor,
                       height / 12,

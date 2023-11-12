@@ -17,9 +17,9 @@ class Help extends StatefulWidget {
 
 class _HelpState extends State<Help> {
   late ColorNotifier notifier;
-  TextEditingController network = TextEditingController();
+  TextEditingController email = TextEditingController();
   TextEditingController message = TextEditingController();
-  TextEditingController amount = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     notifier = Provider.of<ColorNotifier>(context, listen: true);
@@ -30,8 +30,8 @@ class _HelpState extends State<Help> {
           "Help",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontSize: height / 50,
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
@@ -67,8 +67,8 @@ class _HelpState extends State<Help> {
             Container(
                 margin: const EdgeInsets.only(left: 20,right:20),
                 child: Customtextbox.textField(
-                  amount,
-                  EnString.amount,
+                  email,
+                  "Email",
                   notifier.getvisacolor,
                   notifier.getvisacolor,
                   height / 12,

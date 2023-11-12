@@ -27,7 +27,7 @@ class _AllOptionsState extends State<AllOptions> {
           style: TextStyle(
             color: notifier.getblack,
             fontSize: height / 40,
-            fontFamily: 'Gilroy_Bold',
+            fontFamily: 'Poppins_Bold',
           ),
         ),
         elevation: 0,
