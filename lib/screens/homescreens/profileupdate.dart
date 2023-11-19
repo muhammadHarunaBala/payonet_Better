@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/colornotifir.dart';
-import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
 import '../authscreens/otp.dart';
 import '../customescreens/customtextfild.dart';

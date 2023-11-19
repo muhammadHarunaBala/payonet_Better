@@ -2,13 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:payonet/screens/homescreens/profileupdate.dart';
 import 'package:provider/provider.dart';
-
-
 import '../../utils/colornotifir.dart';
-import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
 import '../authscreens/changepasscode.dart';
-import '../customescreens/custtombutton.dart';
 
 
 class KycVerification extends StatefulWidget {

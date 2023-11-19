@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:payonet/screens/homescreens/home.dart';
 import 'package:provider/provider.dart';
 import '../../utils/colornotifir.dart';
 import '../../utils/mediaqury.dart';
-import '../authscreens/signin.dart';
+import '../authscreens/successfully.dart';
+import '../homescreens/bottombar/bottombar.dart';
 import '../obordingscreens/onbording_screen.dart';
 
 
@@ -28,7 +30,7 @@ class _SplashscreenState extends State<Splashscreen> {
           () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) =>  const OnboardingScreen(),
+          builder: (context) =>   BottomBar(),
         ),
       ),
     );

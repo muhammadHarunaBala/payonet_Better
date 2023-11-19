@@ -1,14 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:payonet/screens/authscreens/otp.dart';
-import 'package:payonet/screens/homescreens/home.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/color.dart';
 import '../../utils/colornotifir.dart';
-import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
-import '../customescreens/customtextfild.dart';
 import '../customescreens/custtombutton.dart';
 import '../homescreens/bottombar/bottombar.dart';
 import 'creatingnewacc.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:payonet/utils/mediaqury.dart';
+import 'package:pin_code_view/pin_code_view.dart';
 
 class successful extends StatefulWidget {
   const successful({super.key});
@@ -12,23 +13,16 @@ class successful extends StatefulWidget {
 class _successfulState extends State<successful> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Dialog(
-        shape: RoundedRectangleBorder(
-            borderRadius:BorderRadius.circular(30.0)),
-        child: Container(
-          height: 300,
-          child:  Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const FlutterLogo(size: 150,),
-              const Text("This is a Custom Dialog",style:TextStyle(fontSize: 20),),
-              SizedBox(height: height/50,)
+    return PinCode(
+      backgroundColor: Colors.blueAccent,
+      title: "Enter PIN Code",subtitleTextStyle: TextStyle(
 
-            ],
-          ),
-        ),
-      ) ,
+    ),
+      //subtitle: "Please enter the code you received on your Phone",
+      onChange: (String code) {
+        print(code);
+      },
+      obscurePin: false,
     );
   }
 }

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:payonet/screens/authscreens/successfully.dart';
 import 'package:payonet/screens/customescreens/custtombutton.dart';
 import 'package:payonet/utils/color.dart';
 import 'package:payonet/utils/mediaqury.dart';

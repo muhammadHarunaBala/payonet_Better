@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:payonet/screens/authscreens/signin.dart';
-import 'package:payonet/screens/authscreens/successfully.dart';
 import 'package:payonet/screens/customescreens/customtextfild.dart';
 import 'package:payonet/screens/customescreens/custtombutton.dart';
 import 'package:payonet/utils/enlanguage.dart';
 import 'package:payonet/utils/mediaqury.dart';
 import 'package:provider/provider.dart';
-
 import '../../utils/color.dart';
 import '../../utils/colornotifir.dart';
 import 'otp.dart';

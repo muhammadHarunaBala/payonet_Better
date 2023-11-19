@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../alloptions.dart';
 import '../home.dart';
 import '../profilesettings.dart';
 import '../scanandpay.dart';

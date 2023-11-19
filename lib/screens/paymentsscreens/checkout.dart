@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:payonet/screens/paymentsscreens/reciept.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/colornotifir.dart';
-import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
 import '../customescreens/custtombutton.dart';
 
@@ -99,9 +97,9 @@ class _CheckoutState extends State<Checkout> {
                   ),
                 Container(
                   margin: const EdgeInsets.only(left: 20,right: 20),
-                    child: Divider()),
+                    child: const Divider()),
 
-                 SizedBox(height: 10,),
+                 const SizedBox(height: 10,),
 
                  Column(
                    crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -181,7 +179,7 @@ class _CheckoutState extends State<Checkout> {
                             height: height/45,
                             width: width/7,
                             decoration: ShapeDecoration(
-                             color: Color(0xfff75555),
+                             color: const Color(0xfff75555),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5),
                               ),

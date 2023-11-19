@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../utils/colornotifir.dart';
 import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
-import '../authscreens/otp.dart';
 import '../customescreens/customtextfild.dart';
 import '../customescreens/custtombutton.dart';
 import 'checkout.dart';
@@ -33,7 +30,7 @@ class _ElectricityState extends State<Electricity> {
           "Electricity",
           style: TextStyle(
             color: notifier.getblack,
-            fontSize: height / 40,
+            fontSize: 18,
             fontFamily: 'Poppins_Bold',
           ),
         ),
@@ -60,7 +57,7 @@ class _ElectricityState extends State<Electricity> {
                     margin: const EdgeInsets.all(20),
 
                     child: const Divider()),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 40,),
 
                 Container(
                     margin: const EdgeInsets.only(left: 20,right:20),

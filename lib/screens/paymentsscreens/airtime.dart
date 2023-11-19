@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:payonet/screens/paymentsscreens/reciept.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/colornotifir.dart';
 import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
-import '../authscreens/otp.dart';
 import '../customescreens/customtextfild.dart';
 import '../customescreens/custtombutton.dart';
 import 'checkout.dart';

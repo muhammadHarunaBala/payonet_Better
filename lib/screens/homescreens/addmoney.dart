@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../utils/colornotifir.dart';
-import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
+import '../customescreens/custtombutton.dart';
+import '../paymentsscreens/checkout.dart';
 
 class AddMoney extends StatefulWidget {
   const AddMoney({super.key});
@@ -228,6 +227,16 @@ class _AddMoneyState extends State<AddMoney> {
                     color: notifier.getblack,
                   ),
                 ],
+              ),
+            ),
+            SizedBox(height: height/ 4,),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Checkout()));
+                },
+                child: Custombutton.button(notifier.getprimeryColor, "Confirm Pay", width/1.1),
               ),
             )
           ],

@@ -1,24 +1,16 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:payonet/screens/authscreens/otp.dart';
 import 'package:payonet/screens/homescreens/profilesettings.dart';
-import 'package:payonet/screens/homescreens/scanandpay.dart';
 import 'package:provider/provider.dart';
-
-import '../../utils/color.dart';
 import '../../utils/colornotifir.dart';
 import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
-import '../customescreens/custtombutton.dart';
 import '../obordingscreens/customeshape.dart';
 import '../paymentsscreens/airtime.dart';
 import '../paymentsscreens/electricity.dart';
-import '../paymentsscreens/flight/Flight.dart';
 import '../paymentsscreens/internet.dart';
-import '../paymentsscreens/sendtobank.dart';
 import 'addmoney.dart';
-import 'alloptions.dart';
 import 'help.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,17 +27,22 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'trnx_name': 'Paid to Garba Aliyu',
       'amount': -100,
-      'lastSeen': DateTime.now().subtract(const Duration(hours: 2)),
+      'lastSeen': DateTime.now().subtract(const Duration(hours: 1)),
     },
     {
       'trnx_name': 'Send from Aliyu Mudi',
       'amount': 700,
-      'lastSeen': DateTime.now().subtract(const Duration(hours: 2)),
+      'lastSeen': DateTime.now().subtract(const Duration(hours: 3)),
     },
     {
       'trnx_name': 'Paid to jatau Mugu',
       'amount': -300,
-      'lastSeen': DateTime.now().subtract(const Duration(hours: 2)),
+      'lastSeen': DateTime.now().subtract(const Duration(hours: 4)),
+    },
+    {
+      'trnx_name': 'Paid to aliyu india',
+      'amount': 300,
+      'lastSeen': DateTime.now().subtract(const Duration(hours: 12)),
     },
 
 
@@ -273,12 +270,12 @@ class _HomeScreenState extends State<HomeScreen> {
             Align(
               alignment: Alignment.topLeft,
               child: Container(
-                margin: const EdgeInsets.only(left: 20,bottom: 10),
+                margin: const EdgeInsets.only(left: 25,bottom: 10),
                 child: const Text(
                   'Recharge and bills',
                   style: TextStyle(
-                    color: Color(0xFF5E5353),
                     fontSize: 18,
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins_Medium',
                     //fontWeight: FontWeight.bold,
                   ),
@@ -436,12 +433,12 @@ class _HomeScreenState extends State<HomeScreen> {
             //     ],
             //   ),
             // ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Container(
               alignment: Alignment.centerLeft,
               child: const Padding(
-                padding: EdgeInsets.only(left: 10,top: 10,),
-                child: Text("Payment History",style: TextStyle(fontWeight: FontWeight.normal, color: Color(0xFF5E5353),fontFamily: "Poppins_Medium",fontSize: 18),),
+                padding: EdgeInsets.only(left: 25,top: 10,),
+                child: Text("Recent Activities",style: TextStyle(fontWeight: FontWeight.bold, fontFamily: "Poppins_Medium",fontSize: 18),),
               ),
             ),
             Padding(
