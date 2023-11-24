@@ -144,16 +144,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                 children: [
 
-                                  RichText(
-                                    text:  TextSpan(
-                                        children: [
-                                          const TextSpan(text: 'Balance \n', style: TextStyle(color: Colors.white,fontSize: 20,fontFamily: "Poppins_Medium")),
-                                          TextSpan(text: '₦${EnString.tenk}', style: const TextStyle(color: Colors.white,fontSize: 27,fontFamily: "Poppins_Medium"),),
+                                  Container(
 
+                                    child: RichText(
+                                      text:  TextSpan(
+                                          children: [
+                                            const TextSpan(text: 'Balance \n', style: TextStyle(color: Colors.white,fontSize: 20,fontFamily: "Poppins_Medium")),
+                                            TextSpan(text: '₦${EnString.tenk}', style: const TextStyle(color: Colors.white,fontSize: 20,fontFamily: "Poppins_Medium"),),
 
-                                        ]
+                                          ]
+                                      ),
+
                                     ),
-
                                   ),
                                   SizedBox(
                                     height: 20,
