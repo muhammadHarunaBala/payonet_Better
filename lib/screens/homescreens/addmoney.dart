@@ -199,7 +199,7 @@ class _AddMoneyState extends State<AddMoney> {
                 children: [
                   Container(
                       margin: const EdgeInsets.only(left: 20, top:20,bottom: 10 ),
-                      child: _buildButtonColumnsend(notifier.getprimeryColor, notifier.getblack,Icons.account_balance)),
+                      child: _buildButtonColumnsend(notifier.getprimeryColor, notifier.getblack,Icons.credit_card)),
                   const Column(
                     children: [
                       SizedBox(height: 30,),

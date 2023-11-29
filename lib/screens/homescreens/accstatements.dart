@@ -99,7 +99,7 @@ class _AccountStatement extends State<AccountStatement> {
                   margin: const EdgeInsets.all(10),
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Otp()));
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>const Otp()));
                     },
                     child: Custombutton.button(notifier.getprimeryColor, EnString.proceed, width/1.1),
                   ),

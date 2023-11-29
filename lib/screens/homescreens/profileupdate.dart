@@ -129,7 +129,7 @@ class _ProfileUpdate extends State<ProfileUpdate> {
                   margin: const EdgeInsets.all(10),
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Otp()));
+                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>const Otp()));
                     },
                     child: Custombutton.button(notifier.getprimeryColor, "Save", width/1.1),
                   ),

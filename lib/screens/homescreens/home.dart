@@ -14,7 +14,7 @@ import 'addmoney.dart';
 import 'help.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -23,26 +23,33 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   List<Map<String, dynamic>> trnax=[
     {
       'trnx_name': 'Paid to Garba Aliyu',
       'amount': -100,
-      'lastSeen': DateTime.now().subtract(const Duration(hours: 1)),
+      'from': 'payontime',
+       
+
     },
     {
       'trnx_name': 'Send from Aliyu Mudi',
       'amount': 700,
-      'lastSeen': DateTime.now().subtract(const Duration(hours: 3)),
+      'from': 'payontime',
+       
+
     },
     {
       'trnx_name': 'Paid to jatau Mugu',
       'amount': -300,
-      'lastSeen': DateTime.now().subtract(const Duration(hours: 4)),
+      'from': 'payontime',
+
     },
     {
       'trnx_name': 'Paid to aliyu india',
       'amount': 300,
-      'lastSeen': DateTime.now().subtract(const Duration(hours: 12)),
+      'from': 'payontime',
+
     },
 
 
@@ -54,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     bool checkTrnx = false;
+    bool _visability=false;
     return  Scaffold(
 
       body: SingleChildScrollView(
@@ -61,25 +69,26 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               color: const Color(0xFF007cbb),
-              height: height/4.5,
+              height: height/3.7,
               child: Stack(
                 children: [
+
                   ClipPath(
                     clipper: Customshape(),
                     child: Container(
-                      height: 300,
-                      width: MediaQuery.of(context).size.width,
+                      height: height/1.2,
+                      width: MediaQuery.of(context).size.width/2.0,
                       color: const Color(0xFF1587c1),
                     ),
                   ),
-                  // ClipPath(
-                  //   clipper:Customshape(),
-                  //   child: Container(
-                  //     height: 210,
-                  //     width: MediaQuery.of(context).size.width/1.3,
-                  //     color:const Color(0xFF2791c7) ,
-                  //   ),
-                  // ),
+                  ClipPath(
+                    clipper:Customshape(),
+                    child: Container(
+                      height: height/5,
+                      width: MediaQuery.of(context).size.width/2.5,
+                      color:const Color(0xFF007cbb) ,
+                    ),
+                  ),
                   Column(
 
                     children: [
@@ -140,34 +149,82 @@ class _HomeScreenState extends State<HomeScreen> {
                             alignment: Alignment.centerLeft,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 40),
-                              child: Row(
+                              child: Container(
+                                child: Column(
+                                  children: [
+                                    const Row(
 
-                                children: [
+                                      children: [
+                                        Text(
+                                            "Available Balance",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              color: Colors.white,
+                                              fontFamily: "Poppins_Medium",
+                                              fontWeight: FontWeight.normal,
+                                            )
+                                        ),
 
-                                  Container(
+                                        SizedBox(height: 20,),
 
-                                    child: RichText(
-                                      text:  TextSpan(
-                                          children: [
-                                            const TextSpan(text: 'Balance \n', style: TextStyle(color: Colors.white,fontSize: 20,fontFamily: "Poppins_Medium")),
-                                            TextSpan(text: '₦${EnString.tenk}', style: const TextStyle(color: Colors.white,fontSize: 20,fontFamily: "Poppins_Medium"),),
 
-                                          ]
-                                      ),
 
+                                        // SizedBox(
+                                        //   child: IconButton(
+                                        //       onPressed: (){
+                                        //
+                                        //       },
+                                        //       icon: const Icon(Icons.remove_red_eye_outlined,size: 20,color: Colors.white,)),
+                                        // ),
+
+
+
+
+                                      ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 20,
+                                      Row(
+                                      children: [
+                                        const Text("₦",style: TextStyle(
+                                          fontSize: 28,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),),
+                                        SizedBox(width: 5,),
+
+                                        Container(
+                                          margin: EdgeInsets.all(2),
+
+                                          child:  ido()
+                                        ),
 
 
-                                    child: IconButton(
-                                        onPressed: (){
 
-                                        },
-                                        icon: const Icon(Icons.remove_red_eye,size: 30,color: Colors.white,)),
-                                  ),
-                                ],
+
+                                        ],
+
+                                    )
+                                  ],
+                                ),
+
+
+
+                                // children: [
+                                //
+                                //
+                                //   SizedBox(
+                                //     height: 120,
+                                //
+                                //
+                                //     child: IconButton(
+                                //         onPressed: (){
+                                //
+                                //         },
+                                //         icon: const Icon(Icons.remove_red_eye_outlined,size: 20,color: Colors.white,)),
+                                //   ),
+                                //
+                                //
+                                //
+                                // ],
                               ),
                             ),
 
@@ -277,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Recharge and bills',
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                   // fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins_Medium',
                     //fontWeight: FontWeight.bold,
                   ),
@@ -293,14 +350,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xffDDDDDD),
-                    blurRadius: 6.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(0.0, 0.0),
-                  )
-                ],
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Color(0xffDDDDDD),
+                //     blurRadius: 6.0,
+                //     spreadRadius: 2.0,
+                //     offset: Offset(0.0, 0.0),
+                //   )
+                // ],
               ),
 
               child:  Stack(
@@ -335,7 +392,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           );
 
                         },
-                        child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.electric_bolt, 'Electricity'),
+                        child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.electric_bolt_outlined, 'Electricity'),
                       ),
                       GestureDetector(
                         onTap: (){
@@ -439,28 +496,31 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               alignment: Alignment.centerLeft,
               child: const Padding(
-                padding: EdgeInsets.only(left: 25,top: 10,),
-                child: Text("Recent Activities",style: TextStyle(fontWeight: FontWeight.bold, fontFamily: "Poppins_Medium",fontSize: 18),),
+                padding: EdgeInsets.only(left: 25,),
+                child: Text(
+                  "Recent Activities",style: TextStyle(
+                    //fontWeight: FontWeight.bold,
+                    fontFamily: "Poppins_Medium",fontSize: 18),),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(right: 8.0,left: 20),
               child: Container(
                 width: width/1.1,
-                height: height/2.7,
+                height: height/2.5,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(
                     Radius.circular(10),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xffDDDDDD),
-                      blurRadius: 6.0,
-                      spreadRadius: 2.0,
-                      offset: Offset(0.0, 0.0),
-                    )
-                  ],
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     color: Color(0xffDDDDDD),
+                  //     blurRadius: 6.0,
+                  //     spreadRadius: 2.0,
+                  //     offset: Offset(0.0, 0.0),
+                  //   )
+                  // ],
                 ),
                 child: Column(
                   children: [
@@ -478,23 +538,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             return GestureDetector(
                               onTap: (){},
                               child: SizedBox(
-                                height: height/08,
+                                height: height/12,
                                 child: Column(
                                   children: [
-                                    ListTile(
-                                      leading: const Icon(Icons.person),
-                                      trailing:  Text(
-                                        "NGN ${trnax[index]["amount"]}",
-                                        style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 13,backgroundColor: Color(0x14007cbb)):const TextStyle(color: Colors.red, fontSize: 15,backgroundColor: Color(0x14007cbb), ),
+
+
+                                       ListTile(
+
+                                        trailing:  Text(
+                                          "NGN ${trnax[index]["amount"]}",
+                                          style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 15,backgroundColor: Color(0x14007cbb)):const TextStyle(color: Colors.red, fontSize: 15,backgroundColor: Color(0x14007cbb), ),
+                                        ),
+                                        title: Text(trnax[index]["trnx_name"],style: const TextStyle(fontFamily: "Poppins_Medium",fontSize: 15),),
+                                        //subtitle: Text(from[index]["from"].toString(),style: const TextStyle(fontFamily: "Poppins_Medium")),
                                       ),
-                                      title: Text(trnax[index]["trnx_name"],style: const TextStyle(fontFamily: "Poppins_Medium"),),
-                                      subtitle: Text(trnax[index]["lastSeen"].toString(),style: const TextStyle(fontFamily: "Poppins_Medium")),
-                                    ),
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 40,),
-                                      child:
-                                      Divider(),
-                                    ),
+
+                                    // const Padding(
+                                    //   padding: EdgeInsets.only(left: 40,),
+                                    //   child:
+                                    //   Divider(),
+                                    // ),
 
                                   ],
                                 ),
@@ -586,6 +649,86 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+  bool _visability=false;
+  Widget ido(){
+    return GestureDetector(
+      onTap: (){
+        print("object "+_visability.toString());
+        if(_visability){
+          setState(() {
+            _visability=false;
+          });
+        }else{
+          setState(() {
+            _visability=true;
+          });
+        }
+      },
+      child: Stack(
+        children: [
+          if(_visability)...[
+            const Row(
+              children: [
+                Text("9,800.40",style :TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontFamily: 'Poppins_Medium',
+                  //fontWeight: FontWeight.bold,
+                )),
+                SizedBox(width: 10,),
+                Icon(Icons.visibility,color: Colors.white,)
+              ],
+            )
+          ]else...[
+            const Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("*****",style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontFamily: 'Poppins_Bold',
+                  fontWeight: FontWeight.bold,
+                )),
+                SizedBox(width: 10,),
+                Icon(Icons.visibility_off,color: Colors.white,)
+              ],
+            )
+          ]
+
+        ],
+      ),
+    );
+  }
 
 }
+
+class Customshape extends CustomClipper<Path>{
+  @override
+  Path getClip(Size size) {
+    double height = size.height;
+    double width = size.width;
+
+    var path = Path();
+    path.lineTo(width-0, 0);
+    // path.quadraticBezierTo(width/2, height, width, height-50);
+    //path.cubicTo(width / 2 - width / 8, 0, width / 2 - width / 8, height / 2, width / 2, height / 2);
+    // path.cubicTo(x1, y1, x2, y2, x3, y3)
+    path.cubicTo(width, 10, width, height+0, 0, height-50);
+    //path.quadraticBezierTo(10, 10, 100, 100);
+    // path.conicTo(10, 10, 50,50, 0.5);
+    // path.lineTo(5, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return true;
+  }
+
+
+
+}
+
+
 

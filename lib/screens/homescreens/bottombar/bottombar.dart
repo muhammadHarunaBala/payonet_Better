@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../home.dart';
+
 import '../profilesettings.dart';
 import '../scanandpay.dart';
 
@@ -16,9 +17,9 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   void initState() {
-    _pages.add(const HomeScreen());
-    _pages.add(const ScanAndPay());
-    _pages.add(const ProfileSetting());
+    _pages.add( HomeScreen());
+    //_pages.add(const ScanAndPay());
+    _pages.add( ProfileSetting());
     super.initState();
   }
 
@@ -56,25 +57,27 @@ class _BottomBarState extends State<BottomBar> {
                 items: const [
                   BottomNavigationBarItem(
                       icon: Icon(Icons.credit_card), label: 'Home'),
-                  BottomNavigationBarItem(icon: Icon(Icons.qr_code_scanner_sharp), label: ''),
+                  // BottomNavigationBarItem(
+                  //     icon: Icon(Icons.qr_code_scanner_sharp), label: ''),
+
                   BottomNavigationBarItem(
                       icon: Icon(Icons.read_more), label: 'More')
                 ]),
           ),
         ),
       ),
-      floatingActionButtonLocation:
-      FloatingActionButtonLocation.miniCenterDocked,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FloatingActionButton(
-          backgroundColor: _currentIndex == 1 ? const Color(0xFF1587c1) : Colors.blueGrey,
-          child: const Icon(Icons.qr_code_scanner_outlined),
-          onPressed: () => setState(() {
-            _currentIndex = 2;
-          }),
-        ),
-      ),
+      // floatingActionButtonLocation:
+      // FloatingActionButtonLocation.miniCenterDocked,
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.all(8.0),
+      //   child: FloatingActionButton(
+      //     backgroundColor: _currentIndex == 1 ?Colors.transparent : Colors.transparent,
+      //     child: const Icon(Icons.qr_code_scanner_outlined),
+      //     onPressed: () => setState(() {
+      //       _currentIndex = 2;
+      //     }),
+      //   ),
+      // ),
     );
   }
 }

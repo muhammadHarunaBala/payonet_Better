@@ -30,7 +30,7 @@ class _SplashscreenState extends State<Splashscreen> {
           () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) =>   BottomBar(),
+          builder: (context) =>   OnboardingScreen(),
         ),
       ),
     );
