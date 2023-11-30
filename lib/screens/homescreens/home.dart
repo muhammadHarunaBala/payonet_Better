@@ -26,29 +26,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Map<String, dynamic>> trnax=[
     {
-      'trnx_name': 'Paid to Garba Aliyu',
+      'trnx_name': 'MTN Airtime',
+      'status': "Reversed",
       'amount': -100,
-      'from': 'payontime',
+      'time': DateTime.now().subtract(const Duration(hours: 2)),
        
 
     },
     {
-      'trnx_name': 'Send from Aliyu Mudi',
+      'trnx_name': 'Airtel Data',
+      'status': "Successful",
       'amount': 700,
-      'from': 'payontime',
+      'time': DateTime.now().subtract(const Duration(hours: 2)),
        
 
     },
     {
-      'trnx_name': 'Paid to jatau Mugu',
+      'trnx_name': 'Electricity',
+      'status': "Reversed",
       'amount': -300,
-      'from': 'payontime',
+      'time': DateTime.now().subtract(const Duration(hours: 2)),
 
     },
     {
-      'trnx_name': 'Paid to aliyu india',
+      'trnx_name': 'Glo Airtime',
+      'status': "Successful",
       'amount': 300,
-      'from': 'payontime',
+      'time': DateTime.now().subtract(const Duration(hours: 2)),
 
     },
 
@@ -61,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     bool checkTrnx = false;
-    bool _visability=false;
+
     return  Scaffold(
 
       body: SingleChildScrollView(
@@ -400,7 +404,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           );
 
                         },
-                        child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.menu, 'Add Money'),
+                        child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.add_card_sharp, 'Add Money'),
                       ),
 
                     ],
@@ -538,19 +542,29 @@ class _HomeScreenState extends State<HomeScreen> {
                             return GestureDetector(
                               onTap: (){},
                               child: SizedBox(
-                                height: height/12,
+                                height: height/10,
                                 child: Column(
                                   children: [
 
 
                                        ListTile(
 
-                                        trailing:  Text(
-                                          "NGN ${trnax[index]["amount"]}",
-                                          style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 15,backgroundColor: Color(0x14007cbb)):const TextStyle(color: Colors.red, fontSize: 15,backgroundColor: Color(0x14007cbb), ),
+                                        trailing:  Column(
+                                          children: [
+                                            Text(
+                                              "₦ ${trnax[index]["amount"]}",
+                                              style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 18,backgroundColor: Color(0x14007cbb),fontWeight: FontWeight.w500): TextStyle(color: Colors.red, fontSize: 18,backgroundColor: Colors.red.shade50,fontWeight: FontWeight.w500 ),
+                                            ),
+                                            Text(
+
+                                              "${trnax[index]["status"]}",
+                                              style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 15,backgroundColor: Colors.transparent,fontFamily: "Poppins_Medium"):const TextStyle(color: Colors.red, fontSize: 15,backgroundColor: Colors.transparent,fontFamily: "Poppins_Medium" ),
+                                            ),
+                                          ],
                                         ),
-                                        title: Text(trnax[index]["trnx_name"],style: const TextStyle(fontFamily: "Poppins_Medium",fontSize: 15),),
-                                        //subtitle: Text(from[index]["from"].toString(),style: const TextStyle(fontFamily: "Poppins_Medium")),
+
+                                        title: Text(trnax[index]["trnx_name"],style: const TextStyle(fontFamily: "Poppins_Bold",fontSize: 15),),
+                                        subtitle: Text(trnax[index]["time"].toString(),style: const TextStyle(fontFamily: "Poppins_Medium")),
                                       ),
 
                                     // const Padding(

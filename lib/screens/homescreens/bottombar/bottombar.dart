@@ -56,12 +56,12 @@ class _BottomBarState extends State<BottomBar> {
                 },
                 items: const [
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.credit_card), label: 'Home'),
+                      icon: Icon(Icons.home_filled), label: 'Home'),
                   // BottomNavigationBarItem(
                   //     icon: Icon(Icons.qr_code_scanner_sharp), label: ''),
 
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.read_more), label: 'More')
+                      icon: Icon(Icons.menu), label: 'More')
                 ]),
           ),
         ),

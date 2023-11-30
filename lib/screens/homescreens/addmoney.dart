@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../utils/colornotifir.dart';
 import '../../utils/mediaqury.dart';
-import '../customescreens/custtombutton.dart';
-import '../paymentsscreens/checkout.dart';
 
 class AddMoney extends StatefulWidget {
   const AddMoney({super.key});
@@ -21,7 +19,7 @@ class _AddMoneyState extends State<AddMoney> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Add Money",
+          "Funding",
           style: TextStyle(
             color: notifier.getblack,
             fontSize:  18,
@@ -56,14 +54,14 @@ class _AddMoneyState extends State<AddMoney> {
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xffDDDDDD),
-                    blurRadius: 6.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(0.0, 0.0),
-                  )
-                ],
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Color(0xffDDDDDD),
+                //     blurRadius: 6.0,
+                //     spreadRadius: 2.0,
+                //     offset: Offset(0.0, 0.0),
+                //   )
+                // ],
               ),
               child: Column(
                 children: [
@@ -92,7 +90,7 @@ class _AddMoneyState extends State<AddMoney> {
                             children: [
                               Container(
                                 margin:const EdgeInsets.only(left: 25),
-                                child: const Text("Fund your account",style: TextStyle(
+                                child: const Text("WEMA BANK",style: TextStyle(
                                     fontFamily: 'Poppins_Medium',
 
                                     fontSize: 15
@@ -185,14 +183,14 @@ class _AddMoneyState extends State<AddMoney> {
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xffDDDDDD),
-                    blurRadius: 6.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(0.0, 0.0),
-                  )
-                ],
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Color(0xffDDDDDD),
+                //     blurRadius: 6.0,
+                //     spreadRadius: 2.0,
+                //     offset: Offset(0.0, 0.0),
+                //   )
+                // ],
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -229,16 +227,8 @@ class _AddMoneyState extends State<AddMoney> {
                 ],
               ),
             ),
-            SizedBox(height: height/ 4,),
-            Container(
-              margin: const EdgeInsets.all(10),
-              child: GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Checkout()));
-                },
-                child: Custombutton.button(notifier.getprimeryColor, "Confirm Pay", width/1.1),
-              ),
-            )
+
+
           ],
         ),
       ),
