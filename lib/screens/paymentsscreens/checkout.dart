@@ -21,12 +21,14 @@ class _CheckoutState extends State<Checkout> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          "All Options",
-          style: TextStyle(
-            color: notifier.getblack,
-            fontSize: height / 40,
-            fontFamily: 'Poppins_Bold',
+        title: Expanded(
+          child: Text(
+            "All Options",
+            style: TextStyle(
+              color: notifier.getblack,
+              fontSize: height / 50,
+              fontFamily: 'Poppins_Bold',
+            ),
           ),
         ),
         elevation: 0,
@@ -41,180 +43,198 @@ class _CheckoutState extends State<Checkout> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 20,),
-          Center(
-            child: GestureDetector(
-              onTap: (){
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 20,),
+            Center(
+              child: GestureDetector(
+                onTap: (){
 
 
-              },
-              child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.electric_bolt_outlined, 'Confirm payment details'),
-            ),
-          ),
-           Center(
-              child: Container(
-                margin: const EdgeInsets.fromLTRB(40, 20, 40, 20),
-                child: const Text('Pay electricity bills safely. conveniently &easily you can pay anytime and anywhere!',style: TextStyle(
-                  fontFamily: "Poppins_Medium",
-                ),),
-              )),
-
-
-          Container(
-            height: height/3 ,
-            width: width/1.2,
-            decoration: ShapeDecoration(
-              color: const Color(0x14007cbb),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+                },
+                child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.electric_bolt_outlined, 'Confirm payment details'),
               ),
             ),
-            child: Column(
-              children: [
-                Container(
-                  height: height/8 ,
-                  width: width/5,
-                  decoration: ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  child: CircleAvatar(
-                    radius: 60,
-                    backgroundColor: const Color(0x14007cbb),
-                    child: Container(
-                        padding: const EdgeInsets.all(2),
-                        child: const CircleAvatar(
-                          radius: 70,
-                          backgroundImage: AssetImage('assets/egqr.png'),
+             Center(
+                child: Container(
+                  margin: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                  child: const Text('Pay electricity bills safely. conveniently &easily you can pay anytime and anywhere!',style: TextStyle(
+                    fontFamily: "Poppins_Medium",
+                  ),),
+                )),
 
-                          //
-                        )),
-                  ),
 
-                  ),
-                Container(
-                  margin: const EdgeInsets.only(left: 20,right: 20),
-                    child: const Divider()),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Expanded(
+                child: Material(
 
-                 const SizedBox(height: 10,),
-
-                 Column(
-                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 20),
-                          child: const Text('Bill Amount (USD)',
-                            style: TextStyle(
-                            fontFamily: "Poppins_Medium",
-                          ),),
-
-                        ),
-
-                        const Spacer(),
-                        Container(
-                          margin: const EdgeInsets.only(right: 20),
-                            child: const Text('9,479.25',style: TextStyle(
-                              fontFamily: "Poppins_Medium",
-                            ),))
-                      ],
-                    ),
-                    const SizedBox(height: 15,),
-
-                    Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 20),
-                          child: const Text('Name',style: TextStyle(
-                            fontFamily: "Poppins_Medium",
-                          ),),
-
-                        ),
-
-                        const Spacer(),
-                        Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            child: const Text('Andrew Ainsley',style: TextStyle(
-                              fontFamily: "Poppins_Medium",
-                            ),))
-                      ],
-                    ),
-                    const SizedBox(height: 15,),
-
-                    Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 20),
-                          child: const Text('Customer',style: TextStyle(
-                            fontFamily: "Poppins_Medium",
-                          ),),
-
-                        ),
-
-                        const Spacer(),
-                        Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            child: const Text('37173838939',style: TextStyle(
-                              fontFamily: "Poppins_Medium",
-                            ),))
-                      ],
-                    ),
-                    const SizedBox(height: 15,),
-                    Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 20),
-                          child: const Text('Status',style: TextStyle(
-                            fontFamily: "Poppins_Medium",
-                          ),),
-
-                        ),
-
-                        const Spacer(),
-                        Container(
-                            height: height/45,
-                            width: width/7,
-                            decoration: ShapeDecoration(
-                             color: const Color(0xfff75555),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
+                    color: const Color(0x14007cbb),
+                  shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                  // height: height/3 ,
+                  // width: width/1.2,
+                  // decoration: ShapeDecoration(
+                  //   color: const Color(0x14007cbb),
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(10),
+                  //   ),
+                  // ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: height/8 ,
+                          width: width/5,
+                          decoration: ShapeDecoration(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
                             ),
+                          ),
+                          child: CircleAvatar(
+                            radius: 60,
+                            backgroundColor: const Color(0x14007cbb),
+                            child: Container(
+                                padding: const EdgeInsets.all(2),
+                                child: const CircleAvatar(
+                                  radius: 70,
+                                  backgroundImage: AssetImage('assets/egqr.png'),
 
-                            margin: const EdgeInsets.only(right: 10,left: 5),
-                            child: const Padding(
-                              padding: EdgeInsets.only(left: 2.2),
-                              child: Text('Unpaid',style: TextStyle(
-                                fontFamily: "Poppins_Medium",
-                              ),),
-                            ))
-                      ],
-                    ),
+                                  //
+                                )),
+                          ),
+
+                          ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 20,right: 20),
+                          child: const Divider()),
+
+                       const SizedBox(height: 20,),
+
+                       Column(
+                         crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(left: 20),
+                                child: const Text('Bill Amount (USD)',
+                                  style: TextStyle(
+                                  fontFamily: "Poppins_Medium",
+                                ),),
+
+                              ),
+
+                              const Spacer(),
+                              Container(
+                                margin: const EdgeInsets.only(right: 20),
+                                  child: const Text('9,479.25',style: TextStyle(
+                                    fontFamily: "Poppins_Medium",
+                                  ),))
+                            ],
+                          ),
+                          const SizedBox(height: 20,),
+
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(left: 20),
+                                child: const Text('Name',style: TextStyle(
+                                  fontFamily: "Poppins_Medium",
+                                ),),
+
+                              ),
+
+                              const Spacer(),
+                              Container(
+                                  margin: const EdgeInsets.only(right: 20),
+                                  child: const Text('Andrew Ainsley',style: TextStyle(
+                                    fontFamily: "Poppins_Medium",
+                                  ),))
+                            ],
+                          ),
+                          const SizedBox(height: 20,),
+
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(left: 20),
+                                child: const Text('Customer',style: TextStyle(
+                                  fontFamily: "Poppins_Medium",
+                                ),),
+
+                              ),
+
+                              const Spacer(),
+                              Container(
+                                  margin: const EdgeInsets.only(right: 20),
+                                  child: const Text('37173838939',style: TextStyle(
+                                    fontFamily: "Poppins_Medium",
+                                  ),))
+                            ],
+                          ),
+                          const SizedBox(height: 20,),
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(left: 20),
+                                child: const Text('Status',style: TextStyle(
+                                  fontFamily: "Poppins_Medium",
+                                ),),
+
+                              ),
+
+                              const Spacer(),
+                              Container(
+                                  height: height/45,
+                                  width: width/7,
+                                  decoration: ShapeDecoration(
+                                   color: const Color(0xfff75555),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                  ),
+
+                                  margin: const EdgeInsets.only(right: 10,left: 5),
+                                  child: const Padding(
+                                    padding: EdgeInsets.only(left: 2.2),
+                                    child: Text('Unpaid',style: TextStyle(
+                                      fontFamily: "Poppins_Medium",
+                                    ),),
+                                  ))
+                            ],
+                          ),
 
 
-                  ],
+                        ],
+                      ),
+                      SizedBox(height: 20,)
+
+
+                    ],
+
+                  ),
+
                 ),
-
-
-              ],
-            )
-          ),
-          const SizedBox(height: 30,),
-          Container(
-            margin: const EdgeInsets.all(10),
-            child: GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const Reciept()));
-              },
-              child: Custombutton.button(notifier.getprimeryColor, "Pay now", width/1.1),
+              ),
             ),
-          ),
+            const SizedBox(height: 30,),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Reciept()));
+                },
+                child: Custombutton.button(notifier.getprimeryColor, "Pay now", width/1.1),
+              ),
+            ),
 
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -60,6 +60,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: SafeArea(
         child: Column(
           children: [
+            SizedBox(height: height/10,),
+
             Expanded(
               flex: 2,
               child: PageView.builder(
@@ -76,19 +78,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           contents[i].image,
                           height: SizeConfig.blockV! * 35,
                         ),
-                        SizedBox(
-                          height: (height >= 840) ? 60 : 30,
+                        Expanded(
+                          child: SizedBox(
+                            height: (height >= 840) ? 60 : 30,
+                          ),
                         ),
                         Text(
                           contents[i].title,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style:  TextStyle(
                             fontFamily: "Mulish",
                             fontWeight: FontWeight.w600,
-                            fontSize: (width <= 550) ? 30 : 35,
+                            fontSize:height/50,
                           ),
                         ),
-                        const SizedBox(height: 15),
+                         SizedBox(height: height/70),
 
                       ],
                     ),
@@ -101,85 +105,91 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      contents.length,
-                          (int index) => _buildDots(
-                        index: index,
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        contents.length,
+                            (int index) => _buildDots(
+                          index: index,
+                        ),
                       ),
                     ),
                   ),
                   _currentPage + 1 == contents.length
-                      ? Padding(
+                      ? Expanded(
+                        child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:  const Color(0xFF1587c1),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:  const Color(0xFF1587c1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: (width <= 550)
+                              ? const EdgeInsets.symmetric(
+                              horizontal: 100, vertical: 20)
+                              : EdgeInsets.symmetric(
+                              horizontal: width * 0.2, vertical: 25),
+                          textStyle:
+                          TextStyle(fontSize: (width <= 550) ? 13 : 17),
                         ),
-                        padding: (width <= 550)
-                            ? const EdgeInsets.symmetric(
-                            horizontal: 100, vertical: 20)
-                            : EdgeInsets.symmetric(
-                            horizontal: width * 0.2, vertical: 25),
-                        textStyle:
-                        TextStyle(fontSize: (width <= 550) ? 13 : 17),
-                      ),
-                      child: const Text("Sign Up"),
+                        child: const Text("Sign Up"),
                     ),
-                  )
-                      : Padding(
+                  ),
+                      )
+                      : Expanded(
+                        child: Padding(
                     padding: const EdgeInsets.all(30),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
-                          },
-                          style: TextButton.styleFrom(
-                            elevation: 0,
-                            textStyle: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: (width <= 550) ? 13 : 17,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
+                            },
+                            style: TextButton.styleFrom(
+                              elevation: 0,
+                              textStyle: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: (width <= 550) ? 13 : 17,
+                              ),
+                            ),
+                            child: const Text(
+                              "SKIP",
+                              style: TextStyle( color: Color(0xFF1587c1),),
                             ),
                           ),
-                          child: const Text(
-                            "SKIP",
-                            style: TextStyle( color: Color(0xFF1587c1),),
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            _controller.nextPage(
-                              duration: const Duration(milliseconds: 200),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF1587c1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                          ElevatedButton(
+                            onPressed: () {
+                              _controller.nextPage(
+                                duration: const Duration(milliseconds: 200),
+                                curve: Curves.easeIn,
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF1587c1),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              elevation: 0,
+                              padding: (width <= 550)
+                                  ? const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 20)
+                                  : const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 25),
+                              textStyle: TextStyle(
+                                  fontSize: (width <= 550) ? 13 : 17),
                             ),
-                            elevation: 0,
-                            padding: (width <= 550)
-                                ? const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 20)
-                                : const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 25),
-                            textStyle: TextStyle(
-                                fontSize: (width <= 550) ? 13 : 17),
+                            child: const Text("NEXT"),
                           ),
-                          child: const Text("NEXT"),
-                        ),
-                      ],
+                        ],
                     ),
-                  )
+                  ),
+                      )
                 ],
               ),
             ),

@@ -45,11 +45,11 @@ class _SplashscreenState extends State<Splashscreen> {
     width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: notifier.getbackgroudcolor,
+      backgroundColor: notifier.getprimeryColor,
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: height / 3.2),
+            SizedBox(height: height / 3),
             Image.asset("assets/logo2.png", height: height / 4.5),
           ],
         ),

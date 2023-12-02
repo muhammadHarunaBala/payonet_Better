@@ -1,0 +1,75 @@
+ Container(
+                width: width/1.1,
+                height: height/7,
+                //width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     color: Color(0xffDDDDDD),
+                  //     blurRadius: 6.0,
+                  //     spreadRadius: 2.0,
+                  //     offset: Offset(0.0, 0.0),
+                  //   )
+                  // ],
+                ),
+
+                child:  Stack(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20,top: 5),
+
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const AirtimeRecharge()),
+                              );
+
+                            },
+                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.phonelink_ring, 'Airtime',icon_width,icon_height),
+                          ),
+                        ),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const Internet()),
+                              );
+
+                            },
+                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.language, 'Internet',icon_width,icon_height),
+                          ),
+                        ),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const Electricity()),
+                              );
+
+                            },
+                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.electric_bolt_outlined, 'Electricity',icon_width,icon_height),
+                          ),
+                        ),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const AddMoney()),
+                              );
+
+                            },
+                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.add_card_sharp, 'Add Money',icon_width,icon_height),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ],
+                ),
+              ),

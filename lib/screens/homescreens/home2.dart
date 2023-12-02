@@ -11,16 +11,16 @@ import '../paymentsscreens/internet.dart';
 import 'addmoney.dart';
 import 'help.dart';
 
-class HomeScreen extends StatefulWidget {
-   const HomeScreen({super.key});
+class Home2 extends StatefulWidget {
+  const Home2({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Home2> createState() => _Home2State();
 
 
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _Home2State extends State<Home2> {
 
   List<Map<String, dynamic>> trnax=[
     {
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'status': "Reversed",
       'amount': -100,
       'time': DateTime.now().subtract(const Duration(hours: 2)),
-       
+
 
     },
     {
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'status': "Successful",
       'amount': 700,
       'time': DateTime.now().subtract(const Duration(hours: 2)),
-       
+
 
     },
     {
@@ -64,8 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
-    icon_width=width/4.5;
-    icon_height=width/4.5;
+
     bool checkTrnx = false;
 
     return  Scaffold(
@@ -80,24 +79,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Stack(
                   children: [
 
-                    Expanded(
-                      child: ClipPath(
-                        clipper: Customshape(),
-                        child: Container(
-                          height: height/1.2,
-                          width: MediaQuery.of(context).size.width/2.0,
-                          color: const Color(0xFF1587c1),
-                        ),
+                    ClipPath(
+                      clipper: Customshape(),
+                      child: Container(
+                        height: height/1.2,
+                        width: MediaQuery.of(context).size.width/2.0,
+                        color: const Color(0xFF1587c1),
                       ),
                     ),
-                    Expanded(
-                      child: ClipPath(
-                        clipper:Customshape(),
-                        child: Container(
-                          height: height/5,
-                          width: MediaQuery.of(context).size.width/2.5,
-                          color:const Color(0xFF007cbb) ,
-                        ),
+                    ClipPath(
+                      clipper:Customshape(),
+                      child: Container(
+                        height: height/5,
+                        width: MediaQuery.of(context).size.width/2.5,
+                        color:const Color(0xFF007cbb) ,
                       ),
                     ),
                     Container(
@@ -105,155 +100,149 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Expanded(child: const SizedBox(height: 20,)),
-                          Expanded(
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
 
-                                Expanded(child:  SizedBox(height: height/ 40,)),
-
-
-                                Expanded(
-                                  child: Align(
-                                    alignment: Alignment.topRight,
-
-                                    child: Container(
-                                      margin: const EdgeInsets.only(top: 10,right: 5),
-                                      //color: Colors.red,
-                                      //width: 48,
-                                      height: 50,
+                              Expanded(child:  SizedBox(height: height/ 40,)),
 
 
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                         IconButton(onPressed: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfileSetting()));
-                                            },
-                                                icon: const Icon(Icons.notifications,size: 27,color: Colors.white,)),
+                              Expanded(
+                                child: Align(
+                                  alignment: Alignment.topRight,
 
-                                           IconButton(onPressed: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Help()));
-                                            },
-                                                icon: const Icon(Icons.help,size: 27,color: Colors.white,)),
+                                  child: Container(
+                                    margin: const EdgeInsets.only(top: 10,right: 5),
+                                    //color: Colors.red,
+                                    //width: 48,
+                                    height: 50,
 
 
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Expanded(
+                                          child: IconButton(onPressed: (){
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfileSetting()));
+                                          },
+                                              icon: const Icon(Icons.notifications,size: 27,color: Colors.white,)),
+                                        ),
+                                        Expanded(
+                                          child: IconButton(onPressed: (){
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const Help()));
+                                          },
+                                              icon: const Icon(Icons.help,size: 27,color: Colors.white,)),
+                                        ),
 
-                                        ],
-                                      ),
+
+                                      ],
                                     ),
-
-
-                                    // child: IconButton(
-                                    //     onPressed: (){
-                                    //
-                                    //     },
-                                    //     icon: const Icon(Icons.account_circle,size: 50,color: Colors.white,)),
                                   ),
-                                ),
-                              ],
 
-                            ),
+
+                                  // child: IconButton(
+                                  //     onPressed: (){
+                                  //
+                                  //     },
+                                  //     icon: const Icon(Icons.account_circle,size: 50,color: Colors.white,)),
+                                ),
+                              ),
+                            ],
+
                           ),
 
 
 
-                          Expanded(
-                            child: Container(
-                              height: height/8,
-                              child: Expanded(
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 40),
-                                      child: Container(
-                                        child: Column(
-                                          children: [
-                                            Expanded(
-                                              child: const Row(
+                          Container(
+                            height: height/8,
+                            child: Expanded(
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 40),
+                                    child: Container(
+                                      child: Column(
+                                        children: [
+                                          const Row(
 
-                                                children: [
-                                                  Text(
-                                                      "Available Balance",
-                                                      style: TextStyle(
-                                                        fontSize: 20,
-                                                        color: Colors.white,
-                                                        fontFamily: "Poppins_Medium",
-                                                        fontWeight: FontWeight.normal,
-                                                      )
-                                                  ),
-
-                                                  Expanded(child: SizedBox(height: 20,)),
-
-
-
-                                                  // SizedBox(
-                                                  //   child: IconButton(
-                                                  //       onPressed: (){
-                                                  //
-                                                  //       },
-                                                  //       icon: const Icon(Icons.remove_red_eye_outlined,size: 20,color: Colors.white,)),
-                                                  // ),
-
-
-
-
-                                                ],
-                                              ),
-                                            ),
-                                              Expanded(
-                                                child: Row(
-                                                children: [
-                                                  const Text("₦",style: TextStyle(
-                                                    fontSize: 25,
+                                            children: [
+                                              Text(
+                                                  "Available Balance",
+                                                  style: TextStyle(
+                                                    fontSize: 20,
                                                     color: Colors.white,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),),
-                                                   SizedBox(width: 5,),
+                                                    fontFamily: "Poppins_Medium",
+                                                    fontWeight: FontWeight.normal,
+                                                  )
+                                              ),
 
-                                                  Expanded(
-                                                    //margin: EdgeInsets.all(2),
-
-                                                    child:  ido()
-                                                  ),
+                                              SizedBox(height: 20,),
 
 
 
+                                              // SizedBox(
+                                              //   child: IconButton(
+                                              //       onPressed: (){
+                                              //
+                                              //       },
+                                              //       icon: const Icon(Icons.remove_red_eye_outlined,size: 20,color: Colors.white,)),
+                                              // ),
 
-                                                  ],
-
-                                            ),
-                                              )
-                                          ],
-                                        ),
 
 
 
-                                        // children: [
-                                        //
-                                        //
-                                        //   SizedBox(
-                                        //     height: 120,
-                                        //
-                                        //
-                                        //     child: IconButton(
-                                        //         onPressed: (){
-                                        //
-                                        //         },
-                                        //         icon: const Icon(Icons.remove_red_eye_outlined,size: 20,color: Colors.white,)),
-                                        //   ),
-                                        //
-                                        //
-                                        //
-                                        // ],
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              const Text("₦",style: TextStyle(
+                                                fontSize: 28,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                              ),),
+                                              SizedBox(width: 5,),
+
+                                              Container(
+                                                  margin: EdgeInsets.all(2),
+
+                                                  child:  ido()
+                                              ),
+
+
+
+
+                                            ],
+
+                                          )
+                                        ],
                                       ),
+
+
+
+                                      // children: [
+                                      //
+                                      //
+                                      //   SizedBox(
+                                      //     height: 120,
+                                      //
+                                      //
+                                      //     child: IconButton(
+                                      //         onPressed: (){
+                                      //
+                                      //         },
+                                      //         icon: const Icon(Icons.remove_red_eye_outlined,size: 20,color: Colors.white,)),
+                                      //   ),
+                                      //
+                                      //
+                                      //
+                                      // ],
                                     ),
+                                  ),
 
 
-                                  )
+                                )
 
-                              ),
                             ),
                           ),
                           Expanded(child: const SizedBox(height: 20,))
@@ -359,21 +348,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Recharge and bills',
                     style: TextStyle(
                       fontSize: 18,
-                     // fontWeight: FontWeight.bold,
+                      // fontWeight: FontWeight.bold,
                       fontFamily: 'Poppins_Medium',
                       //fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
 
-                  height: icon_height/1.5+50,
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  height: height/7,
                   //width: double.infinity,
-                  decoration:  BoxDecoration(
-                    color: Colors.white,
+                  decoration: const BoxDecoration(
+                    color: Colors.red,
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
                     ),
@@ -387,54 +376,51 @@ class _HomeScreenState extends State<HomeScreen> {
                     // ],
                   ),
 
-                  child:   Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: (){
-                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const AirtimeRecharge()),
-                              );
+                  child:   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, CupertinoPageRoute(builder: (context)=>const AirtimeRecharge()),
+                            );
 
-                            },
-                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.phonelink_ring, 'Airtime',icon_width,icon_height),
-                          ),
+                          },
+                          child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.phonelink_ring, 'Airtime',icon_width,icon_height),
                         ),
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: (){
-                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const Internet()),
-                              );
+                      ),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, CupertinoPageRoute(builder: (context)=>const Internet()),
+                            );
 
-                            },
-                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.language, 'Internet',icon_width,icon_height),
-                          ),
+                          },
+                          child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.language, 'Internet',icon_width,icon_height),
                         ),
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: (){
-                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const Electricity()),
-                              );
+                      ),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, CupertinoPageRoute(builder: (context)=>const Electricity()),
+                            );
 
-                            },
-                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.electric_bolt_outlined, 'Electricity',icon_width,icon_height),
-                          ),
+                          },
+                          child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.electric_bolt_outlined, 'Electricity',icon_width,icon_height),
                         ),
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: (){
-                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>const AddMoney()),
-                              );
+                      ),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, CupertinoPageRoute(builder: (context)=>const AddMoney()),
+                            );
 
-                            },
-                            child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.add_card_sharp, 'Add Money',icon_width,icon_height),
-                          ),
+                          },
+                          child: _buildButtonColumn(notifier.getprimeryColor, notifier.getblack,Icons.add_card_sharp, 'Add Money',icon_width,icon_height),
                         ),
+                      ),
 
-                      ],
-                    ),
+                    ],
                   ),
                 ),
               ),
@@ -529,7 +515,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.only(left: 25,),
                   child: Text(
                     "Recent Activities",style: TextStyle(
-                      //fontWeight: FontWeight.bold,
+                    //fontWeight: FontWeight.bold,
                       fontFamily: "Poppins_Medium",fontSize: 18),),
                 ),
               ),
@@ -573,31 +559,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                     children: [
 
 
-                                         Expanded(
-                                           child: ListTile(
+                                      ListTile(
 
-                                            trailing:  Column(
-                                              children: [
-                                                Expanded(
-                                                  child: Text(
-                                                    "₦ ${trnax[index]["amount"]}",
-                                                    style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 18,backgroundColor: Color(0x14007cbb),fontWeight: FontWeight.w500): TextStyle(color: Colors.red, fontSize: 18,backgroundColor: Colors.red.shade50,fontWeight: FontWeight.w500 ),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Text(
-
-                                                    "${trnax[index]["status"]}",
-                                                    style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 15,backgroundColor: Colors.transparent,fontFamily: "Poppins_Medium"):const TextStyle(color: Colors.red, fontSize: 15,backgroundColor: Colors.transparent,fontFamily: "Poppins_Medium" ),
-                                                  ),
-                                                ),
-                                              ],
+                                        trailing:  Column(
+                                          children: [
+                                            Text(
+                                              "₦ ${trnax[index]["amount"]}",
+                                              style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 18,backgroundColor: Color(0x14007cbb),fontWeight: FontWeight.w500): TextStyle(color: Colors.red, fontSize: 18,backgroundColor: Colors.red.shade50,fontWeight: FontWeight.w500 ),
                                             ),
+                                            Text(
 
-                                            title: Expanded(child: Text(trnax[index]["trnx_name"],style: const TextStyle(fontFamily: "Poppins_Bold",fontSize: 15),)),
-                                            subtitle: Expanded(child: Text(trnax[index]["time"].toString(),style: const TextStyle(fontFamily: "Poppins_Medium"))),
+                                              "${trnax[index]["status"]}",
+                                              style: checkTrnx?const TextStyle(color: Color(0xFF007cbb), fontSize: 15,backgroundColor: Colors.transparent,fontFamily: "Poppins_Medium"):const TextStyle(color: Colors.red, fontSize: 15,backgroundColor: Colors.transparent,fontFamily: "Poppins_Medium" ),
+                                            ),
+                                          ],
                                         ),
-                                         ),
+
+                                        title: Text(trnax[index]["trnx_name"],style: const TextStyle(fontFamily: "Poppins_Bold",fontSize: 15),),
+                                        subtitle: Text(trnax[index]["time"].toString(),style: const TextStyle(fontFamily: "Poppins_Medium")),
+                                      ),
 
                                       // const Padding(
                                       //   padding: EdgeInsets.only(left: 40,),
@@ -670,17 +650,17 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Expanded(child:  SizedBox(height: 10)),
         Container(
-            width: width/1.5,
-            height: height/1.5,
+            width: width,
+            height: height,
             decoration: ShapeDecoration(
-            color: const Color(0x14007cbb),
+              color: const Color(0x14007cbb),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
             child:
 
-            Icon(icon, color: color,size:height/3)),
+            Icon(icon, color: color,size:height/2)),
         Container(
           margin: const EdgeInsets.only(top: 8),
           child: Expanded(
@@ -688,7 +668,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label,
               style: TextStyle(
                 fontFamily: "Poppins_Medium",
-                fontSize: height/8,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: color1,
               ),
@@ -718,14 +698,12 @@ class _HomeScreenState extends State<HomeScreen> {
           if(_visability)...[
             const Row(
               children: [
-                Expanded(
-                  child: Text("9,800.40",style :TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontFamily: 'Poppins_Bold',
-                    //fontWeight: FontWeight.bold,
-                  )),
-                ),
+                Text("9,800.40",style :TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontFamily: 'Poppins_Medium',
+                  //fontWeight: FontWeight.bold,
+                )),
                 SizedBox(width: 10,),
                 Icon(Icons.visibility,color: Colors.white,)
               ],
@@ -734,14 +712,12 @@ class _HomeScreenState extends State<HomeScreen> {
             const Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(
-                  child: Text("*****",style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontFamily: 'Poppins_Bold',
-                    fontWeight: FontWeight.bold,
-                  )),
-                ),
+                Text("*****",style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontFamily: 'Poppins_Bold',
+                  fontWeight: FontWeight.bold,
+                )),
                 SizedBox(width: 10,),
                 Icon(Icons.visibility_off,color: Colors.white,)
               ],
