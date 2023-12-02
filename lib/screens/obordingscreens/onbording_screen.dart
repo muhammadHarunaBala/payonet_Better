@@ -89,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           style:  TextStyle(
                             fontFamily: "Mulish",
                             fontWeight: FontWeight.w600,
-                            fontSize:height/50,
+                            fontSize:height/30,
                           ),
                         ),
                          SizedBox(height: height/70),
@@ -117,8 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                   _currentPage + 1 == contents.length
-                      ? Expanded(
-                        child: Padding(
+                      ?  Padding(
                     padding: const EdgeInsets.all(20),
                     child: ElevatedButton(
                         onPressed: () {
@@ -127,7 +126,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor:  const Color(0xFF1587c1),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           padding: (width <= 550)
                               ? const EdgeInsets.symmetric(
@@ -139,7 +138,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                         child: const Text("Sign Up"),
                     ),
-                  ),
+
                       )
                       : Expanded(
                         child: Padding(

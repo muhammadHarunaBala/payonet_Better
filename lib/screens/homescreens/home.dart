@@ -202,8 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 ],
                                               ),
                                             ),
-                                              Expanded(
-                                                child: Row(
+                                              Row(
                                                 children: [
                                                   const Text("₦",style: TextStyle(
                                                     fontSize: 25,
@@ -212,10 +211,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   ),),
                                                    SizedBox(width: 5,),
 
-                                                  Expanded(
-                                                    //margin: EdgeInsets.all(2),
+                                                  Container(
+                                                      margin: EdgeInsets.all(2),
 
-                                                    child:  ido()
+                                                      child:  ido()
                                                   ),
 
 
@@ -224,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   ],
 
                                             ),
-                                              )
+
                                           ],
                                         ),
 

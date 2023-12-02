@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../utils/color.dart';
 import '../../utils/colornotifir.dart';
+import '../../utils/enlanguage.dart';
 import '../../utils/mediaqury.dart';
 import '../customescreens/custtombutton.dart';
 import '../homescreens/bottombar/bottombar.dart';
@@ -46,20 +47,27 @@ class _SignInState extends State<SignIn> {
             SizedBox(height:height/ 8),
 
             Center(
-              child: Padding(
-                padding: const EdgeInsets.all(70),
-                child: Image.asset('assets/logo2.png'),
+              child: Column(
+
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(50),
+
+                    child: Image.asset('assets/logo2.png',height: height/5,),
+                  ),
+                ],
               ),
             ),
              Row(
               children: [
                 Container(
                   margin: const EdgeInsets.only(left: 20),
-                  child: const Text('Log In',
+                  child:  Text('Log In',
                     style:TextStyle(
 
                       fontFamily: "Poppins_Medium",
-                      fontSize: 20,
+                      fontSize: height/40,
+
                     ),),
                 ),
 
@@ -70,9 +78,9 @@ class _SignInState extends State<SignIn> {
               children: [
                 Container(
                   margin: const EdgeInsets.only(left: 20),
-                    child: const Text('Enter your phone number to Login',style: TextStyle(
+                    child:  Text('Enter your phone number to Login',style: TextStyle(
                     fontFamily: "Poppins_Medium",
-                      fontSize: 15,
+                      fontSize: height/50,
                     ),)),
               ],
             ),
@@ -219,16 +227,45 @@ class _SignInState extends State<SignIn> {
             ),
             const SizedBox(height: 20,),
 
+
+            Row(
+              children: [
+                Expanded(child: Container(
+                  margin: const EdgeInsets.only(left: 10.0,right: 20.0),
+                  child: const Divider(
+                    color: Colors.black12,
+                  ),
+                )),
+                const Text('OR'),
+
+                Expanded(child: Container(
+                  margin: const EdgeInsets.only(left: 15.0,right: 20.0),
+                  child: const Divider(
+                    color: Colors.black12,
+                    height: 50,
+                  ),
+                ))
+              ],
+            ),
+            SizedBox(height: height/40,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  "Existing User ?",
+                  style: TextStyle(
+                    color: notifier.getvisacolor,
+                    fontSize: height / 50,
+                    fontFamily: 'Poppins_Medium',
+                  ),
+                ),
                 SizedBox(width: width / 70),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>   const CreatingNewAcc(),
+                        builder: (context) =>   const SignIn(),
                       ),
                     );
                   },
@@ -240,10 +277,9 @@ class _SignInState extends State<SignIn> {
                       fontFamily: 'Poppins_Medium',
                     ),
                   ),
-                ),
-                const SizedBox(height: 20,)
+                )
               ],
-            ),
+            )
 
 
           ],
